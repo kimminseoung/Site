@@ -1,20 +1,35 @@
-import {BrowserRouter,Route, Routes} from "react-router-dom";
+import styled from "styled-components";
 import About from "./About";
-import Home from "./Main";
-import Header from "./components/Header";
-import SideNav from "./components/SideNav";
 import Project from './Project';
+import Intro from "./Intro";
+import Header from "./components/Header";
+const Container = styled.div`
+& > div {
+  height: 100%;
+  float: left;
+}`;
+const Box1 = styled.div`
+  width: 250px;
+  border: 1px solid #000;
+  background-color: red;
+`;
+const Box2 = styled.div`
+  width: calc(100% - 250px);
+  overflow-y: scroll;
+  background-color: #212428;
+`;
 function App() {
-
   return (
-    <BrowserRouter>
-      <SideNav/>
-      <Routes>
-        <Route path="/" element={<Home/>}>Main</Route>
-        <Route path="/About" element={<About/>}>About</Route>
-        <Route path="/Project" element={<Project/>}>About</Route>
-      </Routes>
-    </BrowserRouter>
+    <Container>
+      <Box1>
+        <Header/>
+      </Box1>
+      <Box2>
+        <Intro></Intro>
+        <About></About>
+        <Project></Project>
+      </Box2>
+    </Container>   
   );
 }
 

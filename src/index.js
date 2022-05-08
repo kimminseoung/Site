@@ -32,8 +32,6 @@ const Globalstyle = createGlobalStyle`
 		display: block;
 	}
 	body {
-		line-height: 1;
-		overflow-y: hidden;
     font-family: 'Lato','Noto Sans KR', sans-serif;
 	}
 	ol, ul {
@@ -53,9 +51,10 @@ const Globalstyle = createGlobalStyle`
 	}
 	*{
 		box-sizing:border-box;
+		&::-webkit-scrollbar{display: none;}
 	}
 	a {
-		text-decoration:none;
+		text-decoration : none;
 	}
 `;
 

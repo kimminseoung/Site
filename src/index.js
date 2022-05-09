@@ -5,8 +5,7 @@ import {createGlobalStyle,ThemeProvider} from "styled-components"
 import theme from "./theme/theme.js";
 
 const Globalstyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
   html, body, div, span, applet, object, iframe,
 	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 	a, abbr, acronym, address, big, cite, code,
@@ -32,7 +31,8 @@ const Globalstyle = createGlobalStyle`
 		display: block;
 	}
 	body {
-    font-family: 'Lato','Noto Sans KR', sans-serif;
+		font-size:16px;
+    font-family: 'Montserrat','Noto Sans KR', sans-serif;
 	}
 	ol, ul {
 		list-style: none;

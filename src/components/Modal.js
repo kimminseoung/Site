@@ -5,8 +5,9 @@ const Container = styled.div`
     position: fixed;
     transition: 0.5s;
     top: 0;
-    left: 0;
-    display: ${props=>props.close?"block":"none"};
+    left: ${props=>props.close?"0":"-100px"};
+    opacity: ${props=>props.close?"1":"0"};
+    visibility: ${props=>props.close?"visible":"hidden"};
     width: 100vw;
     height: 100vh;
     z-index: ${props=>props.close?"11":"0"};
@@ -88,7 +89,10 @@ const CloseModal = styled.div`
 function Modal({detaildata,openModal}) {
   const [close,setClose]=useState(openModal);
   const onClick = () => {
-    setClose(prev=>!prev)
+    setClose(prev=>!prev);
+    const body = document.querySelector("body");
+    body.style.overflow=close?"hidden":"visible";
+    body.style.height=close?"100%":null;
   };
   
   return (

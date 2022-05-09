@@ -54,7 +54,9 @@ function Content({data}) {
   const [openModal,setOpenModal] = useState(false);
   const showModal = () => {
     setOpenModal(prev=>!prev)
+    
   };
+
   return (
     <>
       <ContentInner>

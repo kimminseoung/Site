@@ -1,32 +1,53 @@
 import styled from "styled-components";
+import { useEffect, useState } from 'react';
 const Container = styled.div`
   width: 100%;
   height: 100vh;
+  background-color: #252525;
+  position: relative;
   h1 {
-    padding-top: 130px;
-    span {
-      display: block;
-      line-height: 170%;
-      &:last-child {
-        font-size: 20px;
-      }
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #7C53EB;
+    transform: translate(-50%,-50%);
+    text-transform: capitalize;
+    font-size: 5.625em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    animation: showTitle 0.9s linear;
+    &::before{
+      content: '';
+      position: absolute;
+      top: 15%;
+      left: -3%;
+      width: 15px;
+      height: 15px;
+      background-color: #fff;
+    }
+  }
+  h2 {
+    position: absolute;
+    left: 0;
+    bottom: 15%;
+    font-size: 1.875em;
+    transform: rotate(270deg);
+    span{color:#fff;}
+  }
+  @keyframes showTitle {
+    0%{
+      transform: scale(0) translate(-50%,-50%);
+    }
+    100%{
+      transform: scale(1) translate(-50%,-50%);
     }
   }
 `;
 function Intro() {
   return (
     <Container>
-      <h1>
-        welcome to my <span>portfolio</span>
-        <span>
-          안녕하세요. 저의 포트폴리오에 오신 것을 환영합니다.
-          <br />
-          프론트엔드 개발자를 꿈꾸며 준비한 작업들과 제 노력의 결과물을 보실 수
-          있습니다.
-          <br />
-          편안하게 보시며 즐겨주세요. 감사합니다 :)
-        </span>
-      </h1>
+      <h1 >portfolio.</h1>
+      <h2>by. <span>Kim Minseong</span></h2>
     </Container>
   );
 }
